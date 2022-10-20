@@ -1,10 +1,13 @@
-const people1 = {
+type TPeople = {
+  peopleName: string;
+};
+const people1: TPeople = {
   peopleName: "Lutik",
 };
-const people2 = {
+const people2: TPeople = {
   peopleName: "Gerald",
 };
-function sayName(this: any) {
+function sayName(this: TPeople) {
   console.log(`My name is ${this.peopleName}`);
 }
 sayName.call(people1);
