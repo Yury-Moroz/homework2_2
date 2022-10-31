@@ -5,3 +5,7 @@ for (let i = 0; i < 6; i++) {
   }
   console.log(`${line}#`);
 }
+const ellka = "#";
+for (let i = 1; i < 19; i++) {
+  console.log(ellka.repeat(i));
+}

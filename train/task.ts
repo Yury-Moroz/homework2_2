@@ -1,37 +1,24 @@
-//console.log("Hello");
-//setTimeout(() => {
-//console.log("call async method");
-//}, 3000);
-//console.log("Good bye");
-//function seyHi(name: string) {
-//console.log(`good morning ${name}`);
-//}
-//function greeting(name: string, cb: (name: string) => void) {
-//cb(name);
-//}
-//greeting("Yury", seyHi);
+// У нас есть список постов на сервере. И наша задача отрисовать текст этих постов на странице.
+//
+//     Но по каким то необъяснимым причинам, нам требуются посты номер 3, 7, 15, 23. Выглядит просто. Но есть нюанс 🐒
+// Посты должны загружаться в определенном порядке. Сначала 15, потом 23, потом 7 и только потом 3.
+// А если какой-то из постов не загрузиться, нам тогда необходимо  вывести в консоль ошиconst
+// const arr: string[] = ["pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer"];
+// arr.reduce((xer: string, value: string) => {
+//   console.log(`${xer}`);
+//   xer += value;
+//   return xer;
+// }, "");
 
-console.log("processor starting ...");
-const p = new Promise((resolve, reject) => {
-  console.log("loading...");
-  setTimeout(() => {
-    const obj: { status: number; message: string; isModified: boolean } = {
-      status: 200,
-      message: "ok",
-      isModified: false,
-    };
-    resolve(obj);
-    //console.log(obj);
-  }, 2000);
-});
-p.then((myObj: any) => {
-  console.log(myObj);
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      myObj.isModified = true;
-      resolve(myObj);
-    }, 3000);
-  });
-})
-  .then((myNewObj: any) => console.log(myNewObj))
-  .finally(() => console.log("the end"));
+// const arr: string[] = ["pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer", "pytin xer"];
+// const arr2: string[] = Object.assign([], arr);
+// console.log(arr);
+// console.log(arr2);
+
+import fetch from "node-fetch";
+const URL = "https://jsonplaceholder.typicode.com/comments?postId=2";
+async function getResponse() {
+  const response = await fetch(URL);
+  return await response.json();
+}
+getResponse().then((result) => console.log(result));
