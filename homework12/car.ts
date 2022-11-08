@@ -1,9 +1,10 @@
 export class CarItaly {
-  // country: string;
-  // wheels: number;
-  // maxSpeed: string;
-
-  constructor(public model: string, public country: string, public wheels: number, public maxSpeed: string) {
+  constructor(
+    protected model: string,
+    protected country: string,
+    protected wheels: number,
+    protected maxSpeed: string,
+  ) {
     this.model = model;
     this.country = country;
     this.wheels = wheels;

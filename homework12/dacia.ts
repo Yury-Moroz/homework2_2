@@ -1,7 +1,14 @@
 import { CarItaly } from "./car";
-
-const dacia = new CarItaly("dacia", "Romania", 4, "212 km/h");
-console.log(dacia);
+class newCar extends CarItaly {
+  constructor(
+    protected model: string,
+    protected country: string,
+    protected wheels: number,
+    protected maxSpeed: string,
+  ) {
+    super(model, country, wheels, maxSpeed);
+  }
+}
 
 function whatItaly(country: string) {
   if (country !== "Italy") {
@@ -10,4 +17,7 @@ function whatItaly(country: string) {
     console.log("this is an Italian car");
   }
 }
+
+const dacia = new newCar("dacia", "Romania", 4, "260 km/h");
+console.log(dacia);
 whatItaly("Romania");
