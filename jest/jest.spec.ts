@@ -1,64 +1,48 @@
-class Calculater2 {
-  sum(a: number, b: number) {
-    return a + b;
-  }
-  sub(a: number, b: number) {
-    return a - b;
-  }
-  dev(a: number, b: number) {
-    return a / b;
-  }
-  mult(a: number, b: number) {
-    return a * b;
-  }
-  compMult(a: number, b: number, c: number) {
-    return a * b * c;
-  }
-}
-const getCalculater2 = new Calculater2();
+import { Calculator } from "../src/calculator";
+const getCalculator = new Calculator();
 
 describe("sum", function () {
   test("addition check+", function () {
-    const actual = 20 + 4;
+    const actual = getCalculator.sum(20, 4);
     expect(actual).toBe(24);
   });
   test("addition check-", function () {
-    expect(10 + 15).toBe(856);
+    expect(getCalculator.sum(2, 4)).toBe(856);
   });
 });
 describe("sub", function () {
   test("checking the subtractio-", function () {
-    const actual = 20 - 4;
+    const actual = getCalculator.sub(20, 4);
     expect(actual).toBe(24);
   });
   test("checking the subtractio+", function () {
-    expect(15 - 10).toBe(5);
+    expect(getCalculator.sub(20, 15)).toBe(5);
   });
 });
-describe("devm", function () {
+describe("dev", function () {
   test("checking the division+", function () {
-    const actual = 20 / 4;
+    const actual = getCalculator.dev(20, 4);
     expect(actual).toBe(5);
   });
   test("achecking the division-", function () {
-    expect(10 / 15).toBe(856);
+    expect(getCalculator.dev(10, 15)).toBe(856);
   });
 });
 describe("mult", function () {
   test("multiplication chec-", function () {
-    const actual = 20 * 4;
+    const actual = getCalculator.mult(6, 6);
     expect(actual).toBe(24);
   });
   test("multiplication chec+", function () {
-    expect(15 * 10).toBe(150);
+    expect(getCalculator.mult(15, 10)).toBe(150);
   });
 });
 describe("compMult", function () {
   test("complex multiplicationn+", function () {
-    const actual = 20 * 4 * 2;
-    expect(actual).toBe(160);
+    const actual = getCalculator.compMult(10, 4, 2);
+    expect(actual).toBe(80);
   });
   test("complex multiplicationn-", function () {
-    expect(10 * 15 * 1250).toBe(6);
+    expect(getCalculator.compMult(10, 1879, 1)).toBe(6);
   });
 });
