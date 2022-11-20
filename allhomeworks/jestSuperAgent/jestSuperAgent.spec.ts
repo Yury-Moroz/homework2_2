@@ -55,3 +55,9 @@ describe("my ninth story", function () {
     expect(response.status).toBe(201);
   });
 });
+describe("my tenth story", function () {
+  test("my tenth test case", async () => {
+    const response = await superagent.post("https://reqres.in/api/users");
+    expect(response.status).toBe(201);
+  });
+});
