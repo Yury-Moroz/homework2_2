@@ -1,0 +1,27 @@
+Task 1
+1.	SELECT * FROM [Customers] where city='London'
+2.	SELECT ContactName, CustomerName FROM [Customers] where Address like '%23'
+3.	SELECT distinct City FROM [Customers]
+4.	SELECT * FROM [Customers] where PostalCode like '0%'
+5.	SELECT * FROM [Customers] where not Country = 'USA'
+6.	SELECT * FROM [Customers] where Country = 'France' order by ContactName asc
+7.	SELECT * FROM [Customers] where Country in ('France', 'Germany') limit 10
+
+Task 2
+1.	SELECT * FROM [Products] where ProductName like 'm%'
+2.	SELECT Unit FROM [Products] where ProductName='Steeleye Stout'
+3.	SELECT * FROM [Products] where Price >22
+4.
+5.	SELECT * FROM [Products] where unit like '%bottles'
+6.	SELECT * FROM [Products] where SupplierID = 7 order by price desc
+
+
+
+Task 4
+1.	SELECT LastName, FirstName, Notes FROM [Employees] where LastName = 'Leverling'
+2.	SELECT * FROM [Employees] where BirthDate < '1960-12-31'
+3.	SELECT BirthDate FROM [Employees] where FirstName like 'a%'
+4.	SELECT LastName, FirstName, BirthDate FROM [Employees] order by BirthDate asc
+
+Task 3
+1.	SELECT * FROM [character] where not race = 'dwarf' and level > 45
