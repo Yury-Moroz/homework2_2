@@ -1,0 +1,23 @@
+Task1.1
+1.	Открываем Jenkins
+2.	Нажимаем Create a job
+3.	Прописываем имя, нажимаем Freestyle project и нажимаем OK
+4.	Создается job: в разделе Source Code Management вставляем URL нужного репозитория, указываем нужную branch
+5.	Добавляем шаги сборки "npm i" и "npm run wdio" и нажимаем Save
+6.	В разделе Build Triggers ставим галочку “GitHub hook trigger for GITcm polling” для запуска по коммиту.
+7.	Для запуска нажимаем Build now
+
+
+Task1.2
+1.	Выполняем все те же действия, что и для запуска по коммиту, до 6 пункта
+2.	 В разделе Build Triggers выбираем Build periodically, там прописываем время запуска тестов, есть подсказка, где можно выбрать уже готовый шаблон. Например: H/15 **** , запуск тестов, каждые 15 минут.
+3.	Для запуска нажимаем Build now
+
+
+Task 2
+1.	Открываем Jenkins
+2.	Нажимаем Create a job
+3.	Прописываем имя, нажимаем Freestyle project и нажимаем OK
+4.	Создается job: в разделе Source Code Management вставляем URL нужного репозитория, указываем нужную branch
+5.	Добавляем шаги сборки "npm i" и "npm run cypress: npx cypress run" и нажимаем Save
+6.	Для запуска нажимаем Build now
